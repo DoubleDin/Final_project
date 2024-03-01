@@ -1,0 +1,132 @@
+
+-----
+Test: tests/test_catalog_page.py::test_catalog_page (call)
+Start time: 2024-03-01 10:06:48.912205
+Start name method: go_to_category
+
+
+-----
+Test: tests/test_catalog_page.py::test_catalog_page (call)
+Start time: 2024-03-01 10:06:48.913203
+Start name method: transit_to_catalog
+
+End time: 2024-03-01 10:06:52.282817
+End name method: transit_to_catalog
+URL: https://e-mobi.com.ru/Elektronika/
+
+-----
+End time: 2024-03-01 10:06:55.163658
+End name method: go_to_category
+URL: https://e-mobi.com.ru/Smartfony/?sort=2
+
+-----
+
+-----
+Test: tests/test_catalog_page.py::test_catalog_page (call)
+Start time: 2024-03-01 10:06:57.169480
+Start name method: filter_product
+
+End time: 2024-03-01 10:07:19.119170
+End name method: filter_product
+URL: https://e-mobi.com.ru/Smartfony/price=40000,50000/
+
+-----
+
+-----
+Test: tests/test_catalog_page.py::test_catalog_page (call)
+Start time: 2024-03-01 10:07:21.120951
+Start name method: go_to_favorite
+
+End time: 2024-03-01 10:07:22.666061
+End name method: go_to_favorite
+URL: https://e-mobi.com.ru/Smartfony/price=40000,50000/
+
+-----
+
+-----
+Test: tests/test_catalog_page.py::test_catalog_page (call)
+Start time: 2024-03-01 10:07:24.668049
+Start name method: filtration_for_buy_product
+
+End time: 2024-03-01 10:07:26.143854
+End name method: filtration_for_buy_product
+URL: https://e-mobi.com.ru/Smartfony/brand=29;price=40000,50000/
+
+-----
+
+-----
+Test: tests/test_catalog_page.py::test_catalog_page (call)
+Start time: 2024-03-01 10:07:28.145006
+Start name method: product_page
+
+End time: 2024-03-01 10:07:33.673356
+End name method: product_page
+URL: https://e-mobi.com.ru/product/6-7-smartfon-honor-90-512-gb-zelenyy_4/#!
+
+-----
+
+-----
+Test: tests/test_catalog_page.py::test_catalog_page (call)
+Start time: 2024-03-01 10:07:33.674441
+Start name method: basket_page
+
+End time: 2024-03-01 10:07:43.327757
+End name method: basket_page
+URL: https://e-mobi.com.ru/basket/
+
+-----
+
+-----
+Test: tests/test_main_page.py::test_main_page (call)
+Start time: 2024-03-01 10:07:47.326822
+Start name method: main_authorization
+
+End time: 2024-03-01 10:07:56.413059
+End name method: main_authorization
+URL: https://e-mobi.com.ru/
+
+-----
+
+-----
+Test: tests/test_main_page.py::test_main_page (call)
+Start time: 2024-03-01 10:07:56.413059
+Start name method: searching
+
+End time: 2024-03-01 10:07:59.858753
+End name method: searching
+URL: https://e-mobi.com.ru/
+
+-----
+
+-----
+Test: tests/test_main_page.py::test_main_page (call)
+Start time: 2024-03-01 10:07:59.860035
+Start name method: choice_popular_category
+
+End time: 2024-03-01 10:08:03.470383
+End name method: choice_popular_category
+URL: https://e-mobi.com.ru/
+
+-----
+
+-----
+Test: tests/test_main_page.py::test_main_page (call)
+Start time: 2024-03-01 10:08:03.470383
+Start name method: top_rating_product
+
+End time: 2024-03-01 10:08:06.469906
+End name method: top_rating_product
+URL: https://e-mobi.com.ru/
+
+-----
+
+-----
+Test: tests/test_main_page.py::test_main_page (call)
+Start time: 2024-03-01 10:08:06.470966
+Start name method: transit_to_catalog
+
+End time: 2024-03-01 10:08:08.334268
+End name method: transit_to_catalog
+URL: https://e-mobi.com.ru/Elektronika/
+
+-----
