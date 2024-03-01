@@ -8,6 +8,7 @@ from selenium import webdriver
 from base.base_class import Base
 from pages.login_modal_window import Login_modal
 from pages.search_product import Search_product
+from utilites.logger import Logger
 
 
 class Main_page(Base):
@@ -90,41 +91,51 @@ class Main_page(Base):
 
     # Авторизация на главной
     def main_authorization(self):
+        Logger.add_start_step(method="main_authorization")
         self.driver.get(self.url)
         self.driver.maximize_window()
         log = Login_modal(self.driver)
         log.authorization()
+        Logger.add_end_step(url=self.driver.current_url, method="main_authorization")
 
     # Поиск товара в поисковой строке и переход на страницу поиска
     def searching(self):
+        Logger.add_start_step(method="searching")
         self.driver.get(self.url)
         self.driver.maximize_window()
         s = Search_product(self.driver)
         s.search_product()
         self.back_to_main_page()  # Возвращаемя на главную страницу
         self.assert_url('https://e-mobi.com.ru/')  # Проверяем, что вернулись на главную
+        Logger.add_end_step(url=self.driver.current_url, method="searching")
 
     # Переход к блоку популярных категорий, выбор категории и переход в нее
     def choice_popular_category(self):
+        Logger.add_start_step(method="choice_popular_category")
         self.driver.get(self.url)
         self.driver.maximize_window()
         self.find_popular_section()
         self.click_category()
         self.assert_url("https://e-mobi.com.ru/Smartfony/")
         self.back_to_main_page()  # Возвращаемя на главную страницу
+        Logger.add_end_step(url=self.driver.current_url, method="choice_popular_category")
 
     # Блок с популярными товарами(Новинки), пролистывание товаров вперед/назад
     def top_rating_product(self):
+        Logger.add_start_step(method="top_rating_product")
         self.driver.get(self.url)
         self.driver.maximize_window()
         self.find_top_rating()
         self.click_arrow_next()
         time.sleep(2)
         self.click_arrow_prev()
+        Logger.add_end_step(url=self.driver.current_url, method="top_rating_product")
 
     def transit_to_catalog(self):
+        Logger.add_start_step(method="transit_to_catalog")
         self.driver.get(self.url)
         self.driver.maximize_window()
         self.click_catalog_electronics()
         self.get_current_url()
+        Logger.add_end_step(url=self.driver.current_url, method="transit_to_catalog")
 

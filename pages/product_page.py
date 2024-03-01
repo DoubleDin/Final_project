@@ -5,6 +5,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 from base.base_class import Base
+from utilites.logger import Logger
 
 
 class Product_page(Base):
@@ -95,6 +96,7 @@ class Product_page(Base):
     # METHODS
 
     def product_page(self):
+        Logger.add_start_step(method="product_page")
         self.click_product_card()
         self.get_text()
         self.assert_word(self.get_product_name_loc(), '6.7" Смартфон HONOR 90 512 ГБ зеленый')
@@ -105,4 +107,5 @@ class Product_page(Base):
         self.add_to_basket()
         self.assert_word(self.get_basket_button_loc(), "Корзина (1)")
         self.get_screenshot()
+        Logger.add_end_step(url=self.driver.current_url, method="product_page")
 

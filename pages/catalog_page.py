@@ -11,6 +11,7 @@ from base.base_class import Base
 from pages.main_page import Main_page
 from pages.product_filtration import Filtration_product
 from pages.product_page import Product_page
+from utilites.logger import Logger
 
 
 class Catalog_page(Base):
@@ -89,14 +90,17 @@ class Catalog_page(Base):
         return print("We find element")
 
     def go_to_category(self):
+        Logger.add_start_step(method="go_to_category")
         c = Main_page(self.driver)
         c.transit_to_catalog()
         self.assert_word(self.get_section_word(), "Электроника")
         self.smartphone_category()
         self.assert_word(self.get_smph_page_word(), "Купить смартфоны в Донецке (ДНР)")
         self.click_and_choose_sort_price()
+        Logger.add_end_step(url=self.driver.current_url, method="go_to_category")
 
     def filter_product(self):
+        Logger.add_start_step(method="filter_product")
         f = Filtration_product(self.driver)
         f.activate_checkbox()
         self.check_element_on_page()
@@ -104,13 +108,17 @@ class Catalog_page(Base):
         f.filter_price()
         self.check_element_on_page()
         self.get_screenshot()
+        Logger.add_end_step(url=self.driver.current_url, method="filter_product")
 
     def filtration_for_buy_product(self):
+        Logger.add_start_step(method="filtration_for_buy_product")
         f = Filtration_product(self.driver)
         f.filter_for_buy()
         self.check_element_on_page()
+        Logger.add_end_step(url=self.driver.current_url, method="filtration_for_buy_product")
 
     def go_to_favorite(self):
+        Logger.add_start_step(method="go_to_favorite")
         self.favorite_page_go()
         self.assert_url("https://e-mobi.com.ru/favorite/")
         self.assert_word(self.get_favorite_page_word(), "Избранное")
@@ -118,6 +126,7 @@ class Catalog_page(Base):
         self.get_screenshot()
         self.driver.back()
         print("Back to Filter Page")
+        Logger.add_end_step(url=self.driver.current_url, method="go_to_favorite")
 
 
 

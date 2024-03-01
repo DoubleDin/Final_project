@@ -6,6 +6,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 from base.base_class import Base
+from utilites.logger import Logger
 
 
 class Basket_page(Base):
@@ -98,6 +99,7 @@ class Basket_page(Base):
     # METHODS
 
     def basket_page(self):
+        Logger.add_start_step(method="basket_page")
         self.go_to_basket()
         self.assert_url('https://e-mobi.com.ru/basket/')
         self.assert_word(self.get_page_word_basket_loc(), "Корзина")
@@ -107,3 +109,4 @@ class Basket_page(Base):
         self.click_counter()
         self.delete_product()
         self.get_screenshot()
+        Logger.add_end_step(url=self.driver.current_url, method="basket_page")
